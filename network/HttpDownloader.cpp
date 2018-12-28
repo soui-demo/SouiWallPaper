@@ -120,7 +120,7 @@ void CHttpDownloader::_download(const std::string & url,long type, long category
 			InternetSetOption(hConnect, INTERNET_OPTION_CONNECT_TIMEOUT, &dwTimeOut, sizeof(dwTimeOut));
 
 			SStringW wUrl = S_CA2W(url.c_str());
-			HINTERNET hSession = InternetOpenUrl(hConnect, wUrl, NULL, 0, INTERNET_FLAG_TRANSFER_BINARY | INTERNET_FLAG_PRAGMA_NOCACHE, 0);
+			HINTERNET hSession = InternetOpenUrl(hConnect, wUrl, NULL, 0, INTERNET_FLAG_TRANSFER_BINARY | INTERNET_FLAG_PRAGMA_NOCACHE| INTERNET_FLAG_RELOAD, 0);
 			if (hSession)
 			{
 				// 建立数据缓冲区
